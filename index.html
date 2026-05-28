@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="3 бесплатных урока по лимфотоку — убрать утренние отёки за 7 дней без мочегонных и массажиста">
+  <title>Тело без отёков — 3 бесплатных урока УПДН</title>
+
+  <!-- ======================================================
+       CONFIG — все настройки только здесь
+       Заполните formActionUrl и thankYouUrl перед деплоем
+  ====================================================== -->
+  <script>
+  var CONFIG = {
+    formActionUrl: "REPLACE_ME",
+    thankYouUrl:   "REPLACE_ME",
+    leadSource:    "landing_telo_bez_otekov_v1",
+    popupDelayMs:  5000,
+    variants: {
+      a: {
+        badge:       "3 бесплатных урока по 4–7 минут",
+        h1:          "Протокол запуска лимфотока, который позволяет за 7 дней убрать утренние отёки и вернуть лицо, каким оно было до 35",
+        subheadline: "Без мочегонных и их откатов, без массажиста за 15 000 ₽, без ограничения воды и соли — и без фразы врача «это возраст, смиритесь»",
+        socialProof: "<strong>Уже 30 000+</strong> женщин запустили лимфоток по системе УПДН и перестали прятать лицо на видеозвонках"
+      },
+      b: {
+        badge:       "3 бесплатных урока по 4–7 минут",
+        h1:          "Как убрать отёки лица за 7 дней с помощью 5-минутного утреннего протокола — и понять, почему массаж, БАДы и диеты не работали",
+        subheadline: "Без мочегонных, без строгих диет, без массажиста — первый результат видно в зеркале уже на следующее утро",
+        socialProof: "<strong>30 000+</strong> выпускников УПДН · Система из 7 элементов, которую не даёт ни один марафон"
+      }
+    },
+    videos: [
+      {
+        duration: "4 мин",
+        title:    "Одна идея, которую вам, скорее всего, никто не говорил",
+        desc:     "Почему ВСЕ методы работают — но каждый решает лишь одну часть проблемы из семи. Почему ограничение воды усиливает отёки. И что на самом деле стоит за утренним отёком."
+      },
+      {
+        duration: "7 мин",
+        title:    "Утренний протокол на 5 минут — делаем вместе прямо сейчас",
+        desc:     "Практика с экспертом: диафрагмальное дыхание, самомассаж лица, лимфодренажные шаги. Делаете в пижаме, до кофе и телефона."
+      },
+      {
+        duration: "6 мин",
+        title:    "Два скрытых фактора — почему отёки не уходят, даже когда вы всё делаете правильно",
+        desc:     "70% лимфатической ткани — в кишечнике. Если там воспаление — никакой массаж не поможет. Плюс железодефицит и паразитарная нагрузка: у 7 из 10 женщин после 35."
+      }
+    ]
+  };
+  </script>
+
+  <!-- Яндекс.Метрика: вставить счётчик сюда (после получения ID от технического специалиста) -->
+  <!-- VK Pixel: вставить пиксель сюда (если нужен ретаргетинг) -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================
+       CSS VARIABLES
+    ========================================= */
+    :root {
+      --cream:      #F7F3EE;
+      --cream-dark: #EDE7DC;
+      --ink:        #1C1C2E;
+      --teal:       #2D8E7E;
+      --teal-light: #A8D5CD;
+      --teal-mid:   #5BB5A8;
+      --teal-dark:  #1E6B5E;
+      --text-body:  #3A3A4A;
+      --text-soft:  #6B6B7E;
+      --text-muted: #9898A8;
+      --error:      #C0392B;
+      --nav-h:      60px;
+    }
+
+    /* =========================================
+       RESET
+    ========================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'Geologica', system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-body);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+    img { max-width: 100%; display: block; }
+    input, button { -webkit-appearance: none; appearance: none; }
+
+    /* =========================================
+       TYPOGRAPHY
+    ========================================= */
+    h1, h2, h3 {
+      font-family: 'Playfair Display', Georgia, serif;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+
+    /* =========================================
+       NAV
+    ========================================= */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      height: var(--nav-h);
+      background: rgba(247,243,238,0.93);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(45,142,126,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+    .nav-logo em { color: var(--teal); font-style: normal; }
+    .nav-btn {
+      flex-shrink: 0;
+      background: var(--teal);
+      color: #fff;
+      padding: 9px 18px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      line-height: 1;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .nav-btn:active { transform: scale(0.96); }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+      padding: 100px 20px 64px;
+      background: linear-gradient(155deg, var(--cream) 55%, rgba(168,213,205,0.25) 100%);
+    }
+    .hero-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* Left column */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(45,142,126,0.11);
+      color: var(--teal-dark);
+      border: 1px solid rgba(45,142,126,0.22);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .hero-badge::before { content: "▶"; font-size: 9px; opacity: 0.8; }
+
+    .hero-h1 {
+      font-size: clamp(24px, 5.5vw, 52px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 18px;
+      line-height: 1.18;
+    }
+    .hero-sub {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text-soft);
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    /* CTA Button */
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #27AE60 0%, #1E9950 100%);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 17px 32px;
+      border-radius: 50px;
+      box-shadow: 0 6px 24px rgba(39,174,96,0.38);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      line-height: 1;
+      text-decoration: none;
+    }
+    .btn-hero:hover  { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(39,174,96,0.48); }
+    .btn-hero:active { transform: translateY(0);    box-shadow: 0 4px 14px rgba(39,174,96,0.32); }
+    @media (prefers-reduced-motion: no-preference) {
+      .btn-hero { animation: pulse 3.5s ease-in-out infinite; }
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(39,174,96,0.38); }
+      50%       { box-shadow: 0 6px 32px rgba(39,174,96,0.6);  }
+    }
+    .hero-lock {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* Right column — video cards */
+    .video-cards { display: flex; flex-direction: column; gap: 10px; }
+    .vcard {
+      background: #fff;
+      border-radius: 14px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      box-shadow: 0 2px 14px rgba(28,28,46,0.07);
+      border: 1px solid rgba(28,28,46,0.055);
+    }
+    .vcard-num {
+      flex-shrink: 0;
+      width: 34px; height: 34px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700;
+    }
+    .vcard-dur { font-size: 11px; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 3px; }
+    .vcard-title { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 3px; }
+    .vcard-desc  { font-size: 12px; color: var(--text-soft); line-height: 1.5; }
+
+    .hero-sp {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 14px;
+      background: rgba(45,142,126,0.08);
+      border: 1px solid rgba(45,142,126,0.15);
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .avatars { display: flex; }
+    .av {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background: linear-gradient(135deg, var(--teal-mid), var(--teal-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: #fff;
+      margin-right: -7px;
+    }
+    .av:last-child { margin-right: 0; }
+    .sp-text { font-size: 13px; color: var(--text-soft); line-height: 1.45; }
+    .sp-text strong { color: var(--teal-dark); }
+
+    /* =========================================
+       ОБЩИЕ СТИЛИ СЕКЦИЙ
+    ========================================= */
+    .sec { padding: 64px 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .sec-title {
+      font-size: clamp(22px, 4vw, 38px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .sec-sub {
+      font-size: clamp(14px, 1.8vw, 17px);
+      color: var(--text-soft);
+      margin-bottom: 36px;
+    }
+
+    /* =========================================
+       PAIN
+    ========================================= */
+    .pain-sec { background: #fff; }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .pain-card {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 18px;
+      border: 1px solid rgba(28,28,46,0.07);
+    }
+    .pain-emoji { font-size: 26px; margin-bottom: 8px; }
+    .pain-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 5px; line-height: 1.35; }
+    .pain-text  { font-size: 13px; color: var(--text-soft); line-height: 1.6; }
+
+    .pain-quote {
+      margin-top: 32px;
+      background: var(--ink);
+      border-radius: 18px;
+      padding: 28px 24px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+    .pain-quote::before {
+      content: "\201C";
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      color: var(--teal);
+      position: absolute;
+      top: -18px; left: 14px;
+      line-height: 1;
+      opacity: 0.25;
+      pointer-events: none;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(15px, 2.2vw, 19px);
+      font-style: italic;
+      color: #fff;
+      line-height: 1.65;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .quote-author { font-size: 13px; color: var(--teal-light); font-weight: 600; }
+
+    /* =========================================
+       VIDEO LESSONS
+    ========================================= */
+    .vl-sec { background: var(--cream); }
+    .lessons { display: flex; flex-direction: column; gap: 36px; }
+    .lesson { display: flex; flex-direction: column; gap: 14px; }
+    .lesson-thumb {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #DFF0ED, #C5E5E1);
+      border-radius: 14px;
+      border: 2px dashed rgba(45,142,126,0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .lesson-play {
+      width: 52px; height: 52px;
+      background: rgba(45,142,126,0.18);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .lesson-thumb-text { font-size: 13px; color: var(--text-soft); font-weight: 500; text-align: center; padding: 0 16px; }
+    .lesson-num  { font-size: 12px; color: var(--teal); font-weight: 700; text-transform: uppercase; letter-spacing: 0.6px; }
+    .lesson-title { font-family: 'Playfair Display', serif; font-size: clamp(17px, 2.5vw, 22px); font-weight: 600; color: var(--ink); line-height: 1.3; margin: 4px 0 6px; }
+    .lesson-desc { font-size: 14px; color: var(--text-soft); line-height: 1.65; }
+
+    /* =========================================
+       TRUTH
+    ========================================= */
+    .truth-sec { background: #fff; }
+    .truth-list { display: flex; flex-direction: column; gap: 12px; }
+    .truth-item {
+      display: flex;
+      gap: 14px;
+      padding: 16px;
+      background: var(--cream);
+      border-radius: 12px;
+      border-left: 3px solid var(--teal);
+    }
+    .truth-n {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+      margin-top: 1px;
+    }
+    .truth-text { font-size: 14px; color: var(--text-body); line-height: 1.65; }
+    .truth-text strong { color: var(--ink); font-weight: 700; }
+
+    /* =========================================
+       EXPERT
+    ========================================= */
+    .expert-sec { background: linear-gradient(155deg, #EAF5F3, var(--cream)); }
+    .expert-grid { display: flex; flex-direction: column; gap: 28px; }
+    .expert-photo-wrap { position: relative; max-width: 280px; margin: 0 auto; width: 100%; }
+    .expert-photo {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(155deg, var(--teal-light), var(--teal-mid));
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: rgba(255,255,255,0.9);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      padding: 20px;
+    }
+    .expert-photo-icon { font-size: 36px; opacity: 0.8; }
+    .expert-photo small { font-size: 12px; opacity: 0.7; }
+    .expert-photo-badge {
+      position: absolute;
+      bottom: 14px; right: -8px;
+      background: var(--ink);
+      color: #fff;
+      padding: 9px 13px;
+      border-radius: 11px;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.35;
+      box-shadow: 0 4px 14px rgba(28,28,46,0.3);
+    }
+    .expert-name  { font-family: 'Playfair Display', serif; font-size: clamp(24px, 4vw, 34px); font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+    .expert-role  { font-size: 14px; color: var(--teal-dark); font-weight: 600; margin-bottom: 18px; line-height: 1.4; }
+    .expert-bio   { font-size: 15px; color: var(--text-soft); line-height: 1.7; margin-bottom: 10px; }
+    .expert-stats { display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
+    .stat {
+      background: #fff;
+      border-radius: 12px;
+      padding: 14px 18px;
+      text-align: center;
+      flex: 1; min-width: 110px;
+      box-shadow: 0 2px 10px rgba(28,28,46,0.06);
+    }
+    .stat-n { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--teal); display: block; }
+    .stat-l { font-size: 12px; color: var(--text-soft); margin-top: 3px; line-height: 1.4; }
+
+    /* =========================================
+       FORM SECTION
+    ========================================= */
+    .form-sec { background: var(--ink); padding: 64px 20px; }
+    .form-wrap { max-width: 580px; margin: 0 auto; text-align: center; }
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(22px, 4.5vw, 34px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+    .form-sub { font-size: 15px; color: rgba(255,255,255,0.58); margin-bottom: 32px; line-height: 1.6; }
+    .form-fields { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+    .form-label { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.65); display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .form-inp {
+      width: 100%;
+      padding: 15px 18px;
+      background: rgba(255,255,255,0.09);
+      border: 1.5px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-inp::placeholder { color: rgba(255,255,255,0.3); }
+    .form-inp:focus { border-color: var(--teal); background: rgba(255,255,255,0.13); }
+    .form-inp.err { border-color: #FF6B6B; }
+    .f-err { font-size: 12px; color: #FF8A8A; margin-top: 4px; display: none; }
+    .f-err.show { display: block; }
+
+    .cb-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 2px; }
+    .cb-inp {
+      flex-shrink: 0;
+      width: 18px; height: 18px;
+      margin-top: 1px;
+      accent-color: var(--teal);
+      cursor: pointer;
+    }
+    .cb-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+    .cb-label a { color: var(--teal-light); text-decoration: underline; }
+
+    .btn-submit {
+      width: 100%;
+      padding: 18px 24px;
+      background: linear-gradient(135deg, #27AE60, #1E9950);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      box-shadow: 0 6px 22px rgba(39,174,96,0.42);
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      margin-top: 4px;
+      line-height: 1;
+      min-height: 58px;
+    }
+    .btn-submit:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(39,174,96,0.52); }
+    .btn-submit:active:not(:disabled){ transform: translateY(0); }
+    .btn-submit:disabled { opacity: 0.72; cursor: not-allowed; }
+
+    .spinner {
+      width: 20px; height: 20px;
+      border: 2.5px solid rgba(255,255,255,0.35);
+      border-top-color: #fff;
+      border-radius: 50%;
+      display: none;
+      flex-shrink: 0;
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .spinner { animation: spin 0.75s linear infinite; }
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner.on { display: block; }
+
+    .form-global-err {
+      background: rgba(192,57,43,0.18);
+      border: 1px solid rgba(192,57,43,0.38);
+      color: #FF8A8A;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 10px;
+      text-align: center;
+      display: none;
+    }
+    .form-global-err.show { display: block; }
+    .form-micro { font-size: 12px; color: rgba(255,255,255,0.35); margin-top: 10px; text-align: center; }
+
+    /* Form highlight on popup scroll */
+    @media (prefers-reduced-motion: no-preference) {
+      .form-highlight { animation: hl 2s ease-out forwards; }
+      @keyframes hl {
+        0%   { box-shadow: 0 0 0 0   rgba(45,142,126,0.7); }
+        30%  { box-shadow: 0 0 0 14px rgba(45,142,126,0.2); }
+        100% { box-shadow: 0 0 0 0   rgba(45,142,126,0);   }
+      }
+    }
+
+    /* =========================================
+       FAQ
+    ========================================= */
+    .faq-sec { background: var(--cream); }
+    .faq-sec .sec-title { text-align: center; margin-bottom: 28px; }
+    .faq-list { display: flex; flex-direction: column; gap: 8px; max-width: 740px; margin: 0 auto; }
+    .faq-item {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid rgba(28,28,46,0.07);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      padding: 17px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-family: inherit;
+      line-height: 1.4;
+      background: none;
+      border: none;
+    }
+    .faq-arrow {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: rgba(45,142,126,0.1);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--teal);
+      font-size: 13px;
+      transition: transform 0.25s;
+    }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-body {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.open .faq-body { max-height: 400px; }
+    .faq-body-inner {
+      padding: 0 18px 16px;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .footer {
+      background: var(--ink);
+      padding: 28px 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+    .footer-logo em { color: var(--teal-light); font-style: normal; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.38); }
+    .footer-links { margin-top: 8px; }
+    .footer-links a { font-size: 13px; color: var(--teal-light); text-decoration: underline; }
+
+    /* =========================================
+       POPUP
+    ========================================= */
+    .popup-ov {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(28,28,46,0.72);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .popup-ov.on { display: flex; }
+    .popup {
+      background: #fff;
+      border-radius: 20px;
+      padding: 36px 28px 32px;
+      max-width: 460px;
+      width: 100%;
+      position: relative;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(28,28,46,0.28);
+    }
+    .popup-x {
+      position: absolute;
+      top: 12px; right: 12px;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: rgba(28,28,46,0.07);
+      color: var(--text-soft);
+      font-size: 16px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .popup-x:hover { background: rgba(28,28,46,0.13); }
+    .popup-icon { font-size: 42px; margin-bottom: 10px; }
+    .popup-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 3vw, 22px);
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 8px;
+      line-height: 1.25;
+    }
+    .popup-sub { font-size: 14px; color: var(--text-soft); margin-bottom: 22px; line-height: 1.55; }
+    .popup-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, #27AE60, #1E9950);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      box-shadow: 0 4px 16px rgba(39,174,96,0.38);
+      transition: transform 0.2s;
+      line-height: 1;
+      min-height: 52px;
+    }
+    .popup-btn:hover  { transform: translateY(-1px); }
+    .popup-btn:active { transform: scale(0.98); }
+
+    /* =========================================
+       DESKTOP OVERRIDES (900px+)
+    ========================================= */
+    @media (min-width: 900px) {
+      .nav { padding: 0 48px; }
+      .nav-btn:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+      .hero { padding: 120px 48px 80px; }
+      .hero-grid { flex-direction: row; gap: 60px; align-items: flex-start; }
+      .hero-left { flex: 1; }
+      .hero-right { flex: 1; }
+
+      .sec { padding: 80px 48px; }
+      .pain-grid { grid-template-columns: repeat(3, 1fr); }
+
+      .lessons { gap: 48px; }
+      .lesson { flex-direction: row; gap: 32px; align-items: flex-start; }
+      .lesson-thumb { flex-shrink: 0; width: 320px; }
+
+      .expert-grid { flex-direction: row; gap: 48px; align-items: flex-start; }
+      .expert-photo-wrap { flex-shrink: 0; width: 280px; max-width: none; margin: 0; }
+      .expert-info { flex: 1; }
+    }
+
+    /* =========================================
+       SMALL PHONES (≤ 360px)
+    ========================================= */
+    @media (max-width: 360px) {
+      .hero { padding-top: 90px; padding-left: 14px; padding-right: 14px; }
+      .hero-h1 { font-size: 22px; }
+      .btn-hero { font-size: 15px; padding: 15px 22px; }
+      .sec { padding: 48px 14px; }
+      .popup { padding: 28px 18px; }
+      .expert-stats { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ================================================
+     NAVIGATION
+================================================ -->
+<nav class="nav" role="banner">
+  <div class="nav-logo">Тело <em>без отёков</em></div>
+  <button class="nav-btn" onclick="scrollToForm()">Получить уроки</button>
+</nav>
+
+<!-- ================================================
+     HERO
+================================================ -->
+<section class="hero">
+  <div class="hero-grid">
+    <!-- Левая колонка -->
+    <div class="hero-left">
+      <div class="hero-badge" id="hero-badge">3 бесплатных урока по 4–7 минут</div>
+      <h1 class="hero-h1" id="hero-h1">Протокол запуска лимфотока, который позволяет за 7 дней убрать утренние отёки и вернуть лицо, каким оно было до 35</h1>
+      <p class="hero-sub" id="hero-sub">Без мочегонных и их откатов, без массажиста за 15 000 ₽, без ограничения воды и соли — и без фразы врача «это возраст, смиритесь»</p>
+      <button class="btn-hero" onclick="scrollToForm()">Получить 3 бесплатных урока →</button>
+      <div class="hero-lock">🔒 Бесплатно · Без спама · Доступ сразу после регистрации</div>
+    </div>
+
+    <!-- Правая колонка: карточки видео -->
+    <div class="hero-right">
+      <div class="video-cards" id="video-cards"></div>
+      <div class="hero-sp">
+        <div class="avatars">
+          <div class="av">М</div>
+          <div class="av">А</div>
+          <div class="av">Е</div>
+          <div class="av">О</div>
+        </div>
+        <div class="sp-text" id="sp-text"><strong>30 000+</strong> женщин запустили лимфоток по системе УПДН</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     PAIN SECTION
+================================================ -->
+<section class="sec pain-sec">
+  <div class="container">
+    <h2 class="sec-title">Массаж, БАДы, бессолевая диета — помогало на 2 недели. Потом снова.</h2>
+    <p class="sec-sub">Узнаёте себя в этих ситуациях?</p>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-emoji">😮</div>
+        <div class="pain-title">«Утром не знаете, какое будет лицо»</div>
+        <div class="pain-text">Вчера было нормальное, сегодня — опухшее. Под глазами мешки. И вы боитесь подходить к зеркалу.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji">👢</div>
+        <div class="pain-title">«К вечеру ноги наливаются»</div>
+        <div class="pain-text">Так, что трудно снять обувь. Сапоги не застёгиваются. Кольцо не снимается с пальца.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji">💊</div>
+        <div class="pain-title">«Мочегонные помогли — а потом стало хуже»</div>
+        <div class="pain-text">Тело в стрессе запасает воду ещё больше. Каждый следующий приём — меньший эффект и больший откат.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji">🩺</div>
+        <div class="pain-title">«Врач сказал: переутомились, всё пройдёт»</div>
+        <div class="pain-text">Анализы в норме. Диагноза нет. А вы стоите с опухшим лицом и не знаете, что делать.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji">💆‍♀️</div>
+        <div class="pain-title">«Массаж — отлично, но через 2 недели всё как было»</div>
+        <div class="pain-text">Лимфа любит движение каждый день, а не раз в две недели. Это всё равно что мыть посуду раз в две недели.</div>
+      </div>
+      <div class="pain-card">
+        <div class="pain-emoji">📸</div>
+        <div class="pain-title">«Видеозвонки и фото — стресс»</div>
+        <div class="pain-text">Закрываете камеру. Просите не фотографировать. Выглядите старше своих лет — и знаете об этом.</div>
+      </div>
+    </div>
+    <div class="pain-quote">
+      <p class="quote-text">«Отёк — это не симптом, который нужно срочно убрать. Это сигнал: в вашем организме застоялась целая система — лимфатическая.»</p>
+      <div class="quote-author">— Татьяна Шевцова, эксперт УПДН</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     VIDEO LESSONS
+================================================ -->
+<section class="sec vl-sec">
+  <div class="container">
+    <h2 class="sec-title">Три урока — смотрите и делайте вместе с экспертом</h2>
+    <p class="sec-sub">По 4–7 минут каждый. Видео откроются сразу после регистрации.</p>
+    <div class="lessons" id="lessons"></div>
+  </div>
+</section>
+
+<!-- ================================================
+     TRUTH
+================================================ -->
+<section class="sec truth-sec">
+  <div class="container">
+    <h2 class="sec-title">Что вы поймёте после трёх уроков про свои отёки</h2>
+    <div class="truth-list" style="margin-top:28px">
+      <div class="truth-item">
+        <div class="truth-n">1</div>
+        <div class="truth-text"><strong>Почему массаж, БАДы и диеты дают эффект только на 2 недели</strong> — каждый метод решает одну часть проблемы из семи. Отёк создаётся всей системой одновременно.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">2</div>
+        <div class="truth-text"><strong>Почему ограничение воды и соли УСИЛИВАЕТ отёки</strong> — тело в стрессе запасает воду ещё больше. Парадокс, но это физиология.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">3</div>
+        <div class="truth-text"><strong>Что такое «7 элементов лимфотока»</strong> — и почему один элемент без остальных шести даёт результат на 2 недели.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">4</div>
+        <div class="truth-text"><strong>Почему «анализы в норме» не значит, что нет проблемы</strong> — лимфатическая система не видна на стандартных анализах. Это не болезнь — это нарушенный лимфоток.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">5</div>
+        <div class="truth-text"><strong>5-минутный утренний протокол</strong> — диафрагмальное дыхание + самомассаж лица + лимфодренажные шаги. Делаете в пижаме до кофе.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">6</div>
+        <div class="truth-text"><strong>70% лимфатической ткани находится в кишечнике</strong> — если там воспаление и дисбактериоз, никакой массаж снаружи не поможет. Это то, что не объясняет ни один марафон.</div>
+      </div>
+      <div class="truth-item">
+        <div class="truth-n">7</div>
+        <div class="truth-text"><strong>Два скрытых фактора у 7 из 10 женщин</strong> — железодефицит (при нормальном гемоглобине, но низком ферритине) и паразитарная нагрузка. Из-за них отёки не уходят даже при правильном уходе.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     EXPERT
+================================================ -->
+<section class="sec expert-sec">
+  <div class="container">
+    <div class="expert-grid">
+      <div class="expert-photo-wrap">
+        <div class="expert-photo">
+          <div class="expert-photo-icon">📷</div>
+          Фото Татьяны Шевцовой
+          <small>будет добавлено</small>
+        </div>
+        <div class="expert-photo-badge">30 000+<br>выпускников<br>УПДН</div>
+      </div>
+      <div class="expert-info">
+        <div class="expert-name">Татьяна Шевцова</div>
+        <div class="expert-role">Эксперт Университета персонализированной диетологии и нутрициологии (УПДН)</div>
+        <p class="expert-bio">Уроки ведёт практикующий нутрициолог. Программы УПДН разрабатываются совместно с эндокринологом и доктором медицинских наук — это не марафон из Instagram, а медицинский подход, проверенный на 30 000+ выпускниках.</p>
+        <p class="expert-bio">Татьяна показывает протокол сама, на камеру — диафрагмальное дыхание, самомассаж лица и лимфодренажные шаги. Это живая практика, которую вы повторяете вместе с ней.</p>
+        <div class="expert-stats">
+          <div class="stat">
+            <span class="stat-n">10+</span>
+            <div class="stat-l">лет в нутрициологии</div>
+          </div>
+          <div class="stat">
+            <span class="stat-n">30 000+</span>
+            <div class="stat-l">выпускников программ УПДН</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FORM
+================================================ -->
+<section class="form-sec" id="register-form">
+  <div class="form-wrap">
+    <h2 class="form-title">Получите 3 урока бесплатно — первый результат завтра утром</h2>
+    <p class="form-sub">Оставьте имя и email. Первый урок откроется сразу. Второй и третий — автоматически.</p>
+
+    <form id="lead-form" novalidate autocomplete="on">
+      <!-- Антибот honeypot -->
+      <input type="text" name="website" tabindex="-1" autocomplete="off"
+             style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+
+      <div class="form-fields">
+        <div>
+          <label class="form-label" for="inp-name">Ваше имя</label>
+          <input class="form-inp" type="text" id="inp-name" name="name"
+                 placeholder="Например, Мария" autocomplete="given-name" minlength="2" required>
+          <div class="f-err" id="err-name">Введите имя (минимум 2 символа)</div>
+        </div>
+
+        <div>
+          <label class="form-label" for="inp-email">Email</label>
+          <input class="form-inp" type="email" id="inp-email" name="email"
+                 placeholder="your@email.ru" autocomplete="email" required>
+          <div class="f-err" id="err-email">Введите корректный email-адрес</div>
+        </div>
+
+        <!-- Скрытые UTM и служебные поля -->
+        <input type="hidden" name="utm_source"      id="f-src">
+        <input type="hidden" name="utm_medium"      id="f-med">
+        <input type="hidden" name="utm_campaign"    id="f-cmp">
+        <input type="hidden" name="utm_content"     id="f-cnt">
+        <input type="hidden" name="utm_term"        id="f-trm">
+        <input type="hidden" name="lead_source"     id="f-ls">
+        <input type="hidden" name="headline_variant" id="f-hv">
+
+        <div>
+          <div class="cb-row">
+            <input class="cb-inp" type="checkbox" id="inp-agree" name="agreement" checked required>
+            <label class="cb-label" for="inp-agree">
+              Соглашаюсь с <a href="#" target="_blank" rel="noopener">обработкой персональных данных</a>
+            </label>
+          </div>
+          <div class="f-err" id="err-agree">Необходимо согласие на обработку данных</div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="btn-sub">
+          <div class="spinner" id="spin"></div>
+          <span id="btn-txt">Получить 3 урока бесплатно →</span>
+        </button>
+
+        <div class="form-global-err" id="form-err"></div>
+        <p class="form-micro">Без спама · Данные защищены · Доступ сразу после регистрации</p>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ================================================
+     FAQ
+================================================ -->
+<section class="sec faq-sec">
+  <div class="container">
+    <h2 class="sec-title">Часто спрашивают</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Это действительно бесплатно?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Да, три урока полностью бесплатны. Покупать что-то после просмотра не обязательно.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Когда откроется доступ к видео?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Сразу после регистрации вы попадаете на страницу с первым уроком. Второй и третий открываются автоматически.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Это поможет, если у меня хронические отёки уже много лет?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Именно для таких случаев и сделаны уроки. В третьем видео разбираем два скрытых фактора, которые чаще всего стоят за хроническими отёками — кишечник и железодефицит.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Мне 55+, это подойдёт?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Да. Программы УПДН ориентированы на женщин от 28 до 65+. Протокол из второго урока не требует физической подготовки.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Я уже пробовала лимфодренаж и диеты — ничего не помогло. Зачем смотреть?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Именно поэтому стоит посмотреть. В первом уроке Татьяна объясняет, почему массаж и диеты дают эффект только на 2 недели — каждый метод решает одну часть проблемы из семи.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Кто ведёт уроки?
+          <span class="faq-arrow">▾</span>
+        </button>
+        <div class="faq-body">
+          <div class="faq-body-inner">Татьяна Шевцова, эксперт УПДН. Программы УПДН разрабатываются совместно с эндокринологом и доктором медицинских наук. 30 000+ выпускников за 10+ лет.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer class="footer">
+  <div class="footer-logo">УПДН · <em>Тело без отёков</em></div>
+  <div class="footer-copy">© 2026 УПДН · Университет персонализированной диетологии и нутрициологии</div>
+  <div class="footer-links"><a href="#" target="_blank" rel="noopener">Политика конфиденциальности</a></div>
+</footer>
+
+<!-- ================================================
+     EXIT-INTENT POPUP
+================================================ -->
+<div class="popup-ov" id="popup-ov" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+  <div class="popup">
+    <button class="popup-x" id="popup-x" aria-label="Закрыть">✕</button>
+    <div class="popup-icon">🎁</div>
+    <h3 class="popup-title" id="popup-title">Не упустите возможность получить 3 бесплатных урока</h3>
+    <p class="popup-sub">По 4–7 минут каждый. Первый результат — завтра утром.</p>
+    <button class="popup-btn" id="popup-cta">Получить 3 бесплатных видео</button>
+  </div>
+</div>
+
+<!-- ================================================
+     JAVASCRIPT
+================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- A/B VARIANT ---------- */
+  function getVariant() {
+    var p = new URLSearchParams(window.location.search);
+    var v   = (p.get('variant')     || '').toLowerCase();
+    var uc  = (p.get('utm_content') || '').toLowerCase();
+    var raw = v || uc;
+    return (raw && raw.indexOf('b') !== -1) ? 'b' : 'a';
+  }
+
+  function applyVariant(vk) {
+    var cfg = CONFIG.variants[vk];
+    if (!cfg) return;
+    var badge = document.getElementById('hero-badge');
+    var h1    = document.getElementById('hero-h1');
+    var sub   = document.getElementById('hero-sub');
+    var sp    = document.getElementById('sp-text');
+    if (badge) badge.textContent    = cfg.badge;
+    if (h1)    h1.textContent       = cfg.h1;
+    if (sub)   sub.textContent      = cfg.subheadline;
+    if (sp)    sp.innerHTML         = cfg.socialProof;
+    document.getElementById('f-hv').value = vk;
+  }
+
+  /* ---------- UTM ---------- */
+  function fillUTM() {
+    var p = new URLSearchParams(window.location.search);
+    document.getElementById('f-src').value = p.get('utm_source')   || '';
+    document.getElementById('f-med').value = p.get('utm_medium')   || '';
+    document.getElementById('f-cmp').value = p.get('utm_campaign') || '';
+    document.getElementById('f-cnt').value = p.get('utm_content')  || '';
+    document.getElementById('f-trm').value = p.get('utm_term')     || '';
+    document.getElementById('f-ls').value  = CONFIG.leadSource;
+  }
+
+  /* ---------- RENDER VIDEO CARDS ---------- */
+  function renderCards() {
+    var wrap = document.getElementById('video-cards');
+    if (!wrap) return;
+    CONFIG.videos.forEach(function (v, i) {
+      var d = document.createElement('div');
+      d.className = 'vcard';
+      d.innerHTML =
+        '<div class="vcard-num">' + (i + 1) + '</div>' +
+        '<div>' +
+          '<div class="vcard-dur">Урок ' + (i + 1) + ' · ' + v.duration + '</div>' +
+          '<div class="vcard-title">' + v.title + '</div>' +
+          '<div class="vcard-desc">'  + v.desc  + '</div>' +
+        '</div>';
+      wrap.appendChild(d);
+    });
+  }
+
+  /* ---------- RENDER LESSON SECTION ---------- */
+  function renderLessons() {
+    var wrap = document.getElementById('lessons');
+    if (!wrap) return;
+    CONFIG.videos.forEach(function (v, i) {
+      var d = document.createElement('div');
+      d.className = 'lesson';
+      d.innerHTML =
+        '<div class="lesson-thumb">' +
+          '<div class="lesson-play">▶</div>' +
+          '<div class="lesson-thumb-text">Видео откроется после регистрации</div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="lesson-num">Урок ' + (i + 1) + ' · ' + v.duration + '</div>' +
+          '<div class="lesson-title">' + v.title + '</div>' +
+          '<div class="lesson-desc">'  + v.desc  + '</div>' +
+        '</div>';
+      wrap.appendChild(d);
+    });
+  }
+
+  /* ---------- SCROLL TO FORM ---------- */
+  window.scrollToForm = function () {
+    var el = document.getElementById('register-form');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
+  /* ---------- FORM VALIDATION ---------- */
+  var EMAIL_RX = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+  function setErr(inputId, errId, show) {
+    var inp = document.getElementById(inputId);
+    var err = document.getElementById(errId);
+    if (!inp || !err) return;
+    if (show) { inp.classList.add('err');    err.classList.add('show'); }
+    else       { inp.classList.remove('err'); err.classList.remove('show'); }
+  }
+
+  function validate() {
+    var ok   = true;
+    var name  = document.getElementById('inp-name');
+    var email = document.getElementById('inp-email');
+    var agree = document.getElementById('inp-agree');
+
+    var nameVal = name ? name.value.trim() : '';
+    if (nameVal.length < 2) {
+      setErr('inp-name', 'err-name', true);
+      if (ok && name) name.focus();
+      ok = false;
+    } else { setErr('inp-name', 'err-name', false); }
+
+    var emailVal = email ? email.value.trim() : '';
+    if (!EMAIL_RX.test(emailVal)) {
+      setErr('inp-email', 'err-email', true);
+      if (ok && email) email.focus();
+      ok = false;
+    } else { setErr('inp-email', 'err-email', false); }
+
+    var agreeErr = document.getElementById('err-agree');
+    if (!agree || !agree.checked) {
+      if (agreeErr) agreeErr.classList.add('show');
+      ok = false;
+    } else { if (agreeErr) agreeErr.classList.remove('show'); }
+
+    return ok;
+  }
+
+  /* ---------- FORM UI STATES ---------- */
+  function setLoading(on) {
+    var btn  = document.getElementById('btn-sub');
+    var spin = document.getElementById('spin');
+    var txt  = document.getElementById('btn-txt');
+    if (!btn) return;
+    btn.disabled = on;
+    if (spin) on ? spin.classList.add('on') : spin.classList.remove('on');
+    if (txt)  txt.textContent = on ? 'Отправляем...' : 'Получить 3 урока бесплатно →';
+  }
+
+  function showGlobalErr(msg) {
+    var el = document.getElementById('form-err');
+    if (!el) return;
+    el.textContent = msg;
+    el.classList.add('show');
+  }
+
+  function hideGlobalErr() {
+    var el = document.getElementById('form-err');
+    if (el) el.classList.remove('show');
+  }
+
+  /* ---------- FORM SUBMIT ---------- */
+  var submitted = false;
+
+  function nativeSubmit(fields) {
+    var f = document.createElement('form');
+    f.method = 'POST';
+    f.action = CONFIG.formActionUrl;
+    f.style.display = 'none';
+    fields.forEach(function (pair) {
+      var inp = document.createElement('input');
+      inp.type = 'hidden'; inp.name = pair[0]; inp.value = pair[1];
+      f.appendChild(inp);
+    });
+    document.body.appendChild(f);
+    f.submit();
+  }
+
+  function doSubmit(e) {
+    e.preventDefault();
+
+    // Honeypot
+    var hp = document.querySelector('input[name="website"]');
+    if (hp && hp.value) return;
+
+    // Config guard
+    if (CONFIG.formActionUrl === 'REPLACE_ME') {
+      alert('⚠️ Форма ещё не настроена.\nЗаполните CONFIG.formActionUrl в коде страницы.\nОбратитесь к администратору.');
+      return;
+    }
+
+    if (!validate()) return;
+
+    setLoading(true);
+    hideGlobalErr();
+
+    var name  = document.getElementById('inp-name').value.trim();
+    var email = document.getElementById('inp-email').value.trim();
+    var fields = [
+      ['name',             name],
+      ['email',            email],
+      ['agreement',        'yes'],
+      ['utm_source',       document.getElementById('f-src').value],
+      ['utm_medium',       document.getElementById('f-med').value],
+      ['utm_campaign',     document.getElementById('f-cmp').value],
+      ['utm_content',      document.getElementById('f-cnt').value],
+      ['utm_term',         document.getElementById('f-trm').value],
+      ['lead_source',      document.getElementById('f-ls').value],
+      ['headline_variant', document.getElementById('f-hv').value]
+    ];
+
+    var body = fields.map(function (p) {
+      return encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]);
+    }).join('&');
+
+    var ctrl = new AbortController();
+    var timer = setTimeout(function () { ctrl.abort(); }, 10000);
+
+    fetch(CONFIG.formActionUrl, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body:    body,
+      signal:  ctrl.signal
+    })
+    .then(function (r) {
+      clearTimeout(timer);
+      if (r.ok || r.status === 200) {
+        submitted = true;
+        sessionStorage.setItem('form_submitted', '1');
+        // Яндекс.Метрика — раскомментировать после вставки счётчика:
+        // if (typeof ym !== 'undefined') ym(COUNTER_ID, 'reachGoal', 'form_submit');
+        var txt = document.getElementById('btn-txt');
+        if (txt) txt.textContent = '✓ Готово! Перенаправляем...';
+        setTimeout(function () { window.location.href = CONFIG.thankYouUrl; }, 350);
+      } else {
+        throw new Error('HTTP ' + r.status);
+      }
+    })
+    .catch(function (err) {
+      clearTimeout(timer);
+      setLoading(false);
+      if (err.name === 'AbortError') {
+        showGlobalErr('Превышено время ожидания. Проверьте интернет и попробуйте ещё раз.');
+      } else if (err.name === 'TypeError' || (err.message && err.message.indexOf('fetch') !== -1)) {
+        // CORS fallback
+        nativeSubmit(fields);
+      } else {
+        showGlobalErr('Не удалось отправить. Проверьте интернет и попробуйте ещё раз.');
+      }
+    });
+  }
+
+  /* ---------- POPUP ---------- */
+  function openPopup() {
+    if (submitted) return;
+    if (sessionStorage.getItem('form_submitted') === '1') return;
+    if (sessionStorage.getItem('popup_dismissed') === '1') return;
+    document.getElementById('popup-ov').classList.add('on');
+  }
+
+  function closePopup() {
+    sessionStorage.setItem('popup_dismissed', '1');
+    document.getElementById('popup-ov').classList.remove('on');
+  }
+
+  /* ---------- FAQ ---------- */
+  function initFAQ() {
+    document.querySelectorAll('.faq-q').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var item = btn.closest('.faq-item');
+        var wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item.open').forEach(function (x) {
+          x.classList.remove('open');
+          x.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!wasOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  /* ---------- INIT ---------- */
+  document.addEventListener('DOMContentLoaded', function () {
+    var vk = getVariant();
+    applyVariant(vk);
+    fillUTM();
+    renderCards();
+    renderLessons();
+    initFAQ();
+
+    // Popup timer
+    setTimeout(openPopup, CONFIG.popupDelayMs);
+
+    // Popup events
+    var popupOv  = document.getElementById('popup-ov');
+    var popupX   = document.getElementById('popup-x');
+    var popupCTA = document.getElementById('popup-cta');
+
+    if (popupX)   popupX.addEventListener('click', closePopup);
+    if (popupOv)  popupOv.addEventListener('click', function (e) { if (e.target === popupOv) closePopup(); });
+    if (popupCTA) popupCTA.addEventListener('click', function () {
+      closePopup();
+      var form = document.getElementById('register-form');
+      if (form) {
+        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(function () {
+          form.classList.add('form-highlight');
+          setTimeout(function () { form.classList.remove('form-highlight'); }, 2000);
+        }, 700);
+      }
+    });
+
+    // Form
+    var form = document.getElementById('lead-form');
+    if (form) form.addEventListener('submit', doSubmit);
+  });
+
+}());
+</script>
+
+</body>
+</html>
