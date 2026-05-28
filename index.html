@@ -13,7 +13,7 @@
   ====================================================== -->
   <script>
   var CONFIG = {
-    formActionUrl: "https://xn--j1amdg6b.xn----7sbhdegumjf0agbb9c1e.xn--p1ai/pl/lite/widget/widget/submit?id=1610554",
+    formActionUrl: "https://xn--j1amdg6b.xn----7sbhdegumjf0agbb9c1e.xn--p1ai/pl/lite/block-public/process?id=2232821377",
     thankYouUrl:   "https://xn--j1amdg6b.xn----7sbhdegumjf0agbb9c1e.xn--p1ai/video1",
     leadSource:    "landing_telo_bez_otekov_v1",
     popupDelayMs:  5000,
@@ -1240,57 +1240,54 @@
     var name  = document.getElementById('inp-name').value.trim();
     var email = document.getElementById('inp-email').value.trim();
     var fields = [
-      ['name',             name],
-      ['email',            email],
-      ['agreement',        'yes'],
-      ['utm_source',       document.getElementById('f-src').value],
-      ['utm_medium',       document.getElementById('f-med').value],
-      ['utm_campaign',     document.getElementById('f-cmp').value],
-      ['utm_content',      document.getElementById('f-cnt').value],
-      ['utm_term',         document.getElementById('f-trm').value],
-      ['lead_source',      document.getElementById('f-ls').value],
-      ['headline_variant', document.getElementById('f-hv').value]
+      // Основные поля GetCourse
+      ['formParams[full_name]',  name],
+      ['formParams[email]',      email],
+      ['formParams[offer_id][]', '8403278'],
+      ['formParams[in_widget]',  '1'],
+      ['formParams[willCreatePaidDeal]', '0'],
+      ['formParams[setted_offer_id]',    ''],
+      ['formParams[allowOtherUser]',     ''],
+      ['__gc__internal__form__helper', 'https://xn--j1amdg6b.xn----7sbhdegumjf0agbb9c1e.xn--p1ai/pl/lite/widget/widget?id=1610554'],
+      ['__gc__internal__form__helper_ref', document.referrer || ''],
+      // UTM → кастомные поля GetCourse
+      ['formParams[dealCustomFields][276208]',  document.getElementById('f-src').value],
+      ['formParams[dealCustomFields][276209]',  document.getElementById('f-med').value],
+      ['formParams[dealCustomFields][276210]',  document.getElementById('f-cmp').value],
+      ['formParams[dealCustomFields][276211]',  document.getElementById('f-cnt').value],
+      ['formParams[dealCustomFields][276212]',  document.getElementById('f-trm').value],
+      ['formParams[dealCustomFields][13756573]', document.getElementById('f-ls').value],
+      ['formParams[dealCustomFields][13756574]', document.getElementById('f-hv').value]
     ];
 
     var body = fields.map(function (p) {
       return encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]);
     }).join('&');
 
-    var ctrl = new AbortController();
-    var timer = setTimeout(function () { ctrl.abort(); }, 10000);
+    // Отправляем через no-cors (GetCourse не отдаёт CORS-заголовки)
+    // Лид сохраняется в GetCourse, мы сразу редиректим на страницу с видео
+    submitted = true;
+    sessionStorage.setItem('form_submitted', '1');
+    var txt = document.getElementById('btn-txt');
+    if (txt) txt.textContent = '✓ Готово! Перенаправляем...';
 
     fetch(CONFIG.formActionUrl, {
       method:  'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body:    body,
-      signal:  ctrl.signal
-    })
-    .then(function (r) {
-      clearTimeout(timer);
-      if (r.ok || r.status === 200) {
-        submitted = true;
-        sessionStorage.setItem('form_submitted', '1');
-        // Яндекс.Метрика — раскомментировать после вставки счётчика:
-        // if (typeof ym !== 'undefined') ym(COUNTER_ID, 'reachGoal', 'form_submit');
-        var txt = document.getElementById('btn-txt');
-        if (txt) txt.textContent = '✓ Готово! Перенаправляем...';
-        setTimeout(function () { window.location.href = CONFIG.thankYouUrl; }, 350);
-      } else {
-        throw new Error('HTTP ' + r.status);
-      }
-    })
-    .catch(function (err) {
-      clearTimeout(timer);
-      setLoading(false);
-      if (err.name === 'AbortError') {
-        showGlobalErr('Превышено время ожидания. Проверьте интернет и попробуйте ещё раз.');
-      } else if (err.name === 'TypeError' || (err.message && err.message.indexOf('fetch') !== -1)) {
-        // CORS fallback
-        nativeSubmit(fields);
-      } else {
-        showGlobalErr('Не удалось отправить. Проверьте интернет и попробуйте ещё раз.');
-      }
+      mode:    'no-cors'
+    }).catch(function () {
+      // При сетевой ошибке — fallback на нативный submit
+      nativeSubmit(fields);
+      return;
     });
+
+    // Яндекс.Метрика — раскомментировать после вставки счётчика:
+    // if (typeof ym !== 'undefined') ym(COUNTER_ID, 'reachGoal', 'form_submit');
+
+    setTimeout(function () {
+      window.location.href = CONFIG.thankYouUrl;
+    }, 500);
   }
 
   /* ---------- POPUP ---------- */
