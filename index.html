@@ -97,6 +97,7 @@
     button { cursor: pointer; font-family: inherit; border: none; background: none; }
     img { max-width: 100%; display: block; }
     input, button { -webkit-appearance: none; appearance: none; }
+    input[type="checkbox"] { -webkit-appearance: checkbox; appearance: checkbox; }
 
     /* =========================================
        TYPOGRAPHY
@@ -487,11 +488,16 @@
     .cb-row { display: flex; align-items: flex-start; gap: 10px; margin-top: 2px; }
     .cb-inp {
       flex-shrink: 0;
-      width: 18px; height: 18px;
-      margin-top: 1px;
+      width: 20px; height: 20px;
+      min-width: 20px;
+      margin-top: 2px;
       accent-color: var(--teal);
       cursor: pointer;
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 4px;
+      background: rgba(255,255,255,0.1);
     }
+    .cb-inp:checked { background: var(--teal); border-color: var(--teal); }
     .cb-label { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.5; }
     .cb-label a { color: var(--teal-light); text-decoration: underline; }
 
@@ -1310,37 +1316,46 @@
       ['formParams[dealCustomFields][276211]',  document.getElementById('f-cnt').value],
       ['formParams[dealCustomFields][276212]',  document.getElementById('f-trm').value],
       ['formParams[dealCustomFields][13756573]', document.getElementById('f-ls').value],
-      ['formParams[dealCustomFields][13756574]', document.getElementById('f-hv').value]
+      ['formParams[dealCustomFields][13756574]', document.getElementById('f-hv').value],
+      // GetCourse требует поле телефона — отправляем пустым (сделать необязательным в настройках GetCourse)
+      ['formParams[phone]', '']
     ];
 
     var body = fields.map(function (p) {
       return encodeURIComponent(p[0]) + '=' + encodeURIComponent(p[1]);
     }).join('&');
 
-    // Отправляем через no-cors (GetCourse не отдаёт CORS-заголовки)
-    // Лид сохраняется в GetCourse, мы сразу редиректим на страницу с видео
+    // Отправляем через скрытый iframe — надёжно без CORS проблем
     submitted = true;
     sessionStorage.setItem('form_submitted', '1');
-    var txt = document.getElementById('btn-txt');
-    if (txt) txt.textContent = '✓ Готово! Перенаправляем...';
-
-    fetch(CONFIG.formActionUrl, {
-      method:  'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body:    body,
-      mode:    'no-cors'
-    }).catch(function () {
-      // При сетевой ошибке — fallback на нативный submit
-      nativeSubmit(fields);
-      return;
-    });
-
     // Яндекс.Метрика — раскомментировать после вставки счётчика:
     // if (typeof ym !== 'undefined') ym(COUNTER_ID, 'reachGoal', 'form_submit');
 
-    setTimeout(function () {
-      window.location.href = CONFIG.thankYouUrl;
-    }, 500);
+    var txt = document.getElementById('btn-txt');
+    if (txt) txt.textContent = '✓ Готово! Перенаправляем...';
+
+    // Создаём скрытый iframe — форма уйдёт туда, браузер не переключится
+    var iframe = document.createElement('iframe');
+    iframe.name = '_gc_hidden';
+    iframe.style.cssText = 'display:none;position:absolute;left:-9999px;';
+    document.body.appendChild(iframe);
+
+    // Создаём форму с target на iframe
+    var f = document.createElement('form');
+    f.method = 'POST';
+    f.action = CONFIG.formActionUrl;
+    f.target  = '_gc_hidden';
+    f.style.display = 'none';
+    fields.forEach(function(pair) {
+      var inp = document.createElement('input');
+      inp.type = 'hidden'; inp.name = pair[0]; inp.value = pair[1];
+      f.appendChild(inp);
+    });
+    document.body.appendChild(f);
+    f.submit();
+
+    // Редиректим на страницу с видео
+    setTimeout(function() { window.location.href = CONFIG.thankYouUrl; }, 600);
   }
 
   /* ---------- POPUP ---------- */
